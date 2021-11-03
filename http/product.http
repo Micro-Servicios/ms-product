@@ -1,0 +1,7 @@
+POST http://localhost:8181/ms-product/v1/api/product/save
+Content-Type: application/json
+
+{
+  "name": "Erwin",
+  "price": 20.00
+}
