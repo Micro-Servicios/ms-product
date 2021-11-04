@@ -5,3 +5,11 @@ Content-Type: application/json
   "name": "Erwin",
   "price": 20.00
 }
+
+###
+POST http://localhost:7878/shutdown
+Content-Type: application/json
+
+{
+  "message": "Shutting down, bye..."
+}

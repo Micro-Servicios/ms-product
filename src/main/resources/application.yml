@@ -5,11 +5,22 @@ spring:
     console:
       enabled: true
 server:
-  port: 7878
+  port: 7979
 
 eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 1
   client:
     fetch-registry: true
     register-with-eureka: true
     serviceUrl:
       defaultZone: http://localhost:8762/eureka
+
+
+management:
+  endpoints:
+    shutdown:
+      enabled: true
+      sensitive: false
