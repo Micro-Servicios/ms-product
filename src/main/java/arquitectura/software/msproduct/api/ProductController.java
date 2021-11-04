@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/v1/api/product")
 public class ProductController {
@@ -24,5 +26,11 @@ public class ProductController {
         System.out.println("REGISTRAR EL PRODUCTO desde el puerto: "+serverPort);
         return productRepository.save(product);
     }
+
+    @RequestMapping(path = "/all", method = RequestMethod.GET)
+    public List<Product> getAllCustomer(){
+        return productRepository.findAll();
+    }
+
 
 }
