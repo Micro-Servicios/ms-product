@@ -1,7 +1,5 @@
 spring:
-  application:
-    name: product
   cloud:
     config:
       uri: http://localhost:8889
-      name: "product"
+      name: "ms-product"
