@@ -4,12 +4,10 @@ import arquitectura.software.msproduct.entity.Product;
 import arquitectura.software.msproduct.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/api/product")
@@ -32,5 +30,13 @@ public class ProductController {
         return productRepository.findAll();
     }
 
-
+    @RequestMapping(path = "/productId", method = RequestMethod.GET)
+    public Boolean getValueProductId(@RequestParam Integer productId){
+        Optional<Product> productOptional =productRepository.findById(productId);
+        if(productOptional.isPresent()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
