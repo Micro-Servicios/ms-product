@@ -3,4 +3,10 @@ spring:
     name: msProduct
 
 server:
-  port: 7777
+  port: ${SERVER_PORT:7878}
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8762/eureka}

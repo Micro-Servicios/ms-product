@@ -1,5 +1,5 @@
 spring:
   cloud:
     config:
-      uri: http://localhost:8889
+      uri: ${URI_CONFIG:http://localhost:8889}
       name: "ms-product"
