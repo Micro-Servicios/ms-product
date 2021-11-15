@@ -25,6 +25,12 @@ public class ProductController {
         return productRepository.save(product);
     }
 
+    @RequestMapping(path = "/update", method = RequestMethod.PUT)
+    public Product updateCustomer(@RequestBody Product product){
+        System.out.println("ACTULIZACION DE EL PRODUCTO desde el puerto: "+serverPort);
+        return productRepository.save(product);
+    }
+
     @RequestMapping(path = "/all", method = RequestMethod.GET)
     public List<Product> getAllCustomer(){
         return productRepository.findAll();

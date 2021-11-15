@@ -11,7 +11,7 @@ POST http://localhost:8181/ms-product/v1/api/product/save
 Content-Type: application/json
 
 {
-  "name": "Erwin",
+  "name": "Erwin2",
   "price": 20.00
 }
 
@@ -23,3 +23,26 @@ Accept: application/json
 ###
 GET http://localhost:8181/ms-product/v1/api/product/all
 Accept: application/json
+
+###
+
+PUT http://localhost:7878/v1/api/product/update
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "name": "Erwin2",
+  "price": 20.00
+}
+
+###
+
+PUT http://localhost:8181/ms-product/v1/api/product/update
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "name": "Erwin33",
+  "price": 20.00
+}
+
